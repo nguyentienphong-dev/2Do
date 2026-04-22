@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,11 +49,12 @@ namespace _2Do
         public static void Mentes()
         {
             List<string> lines = new List<string>();
+            StreamWriter writer = new StreamWriter("todo.txt");
             foreach (var item in ToDoList)
             {
-                lines.Add($"{item.Title};{item.Description};{item.DueDate};{item.IsCompleted}");
+                writer.WriteLine($"{item.Title};{item.Description};{item.DueDate};{item.IsCompleted}");
             }
-            System.IO.File.WriteAllLines("todo.txt", lines);
+            writer.Close();
         }   
     }
 }

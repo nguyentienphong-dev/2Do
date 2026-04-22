@@ -27,6 +27,8 @@ namespace _2Do
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            ToDo.ToDoList.Remove((ToDo)mainWindow.TaskListView.SelectedItem);
+            ToDo.ToDoList.Add(new ToDo(TitleTextBox.Text, DescriptionTextBox.Text, DateTime.Parse(DeadLineTextBox.Text)));
             ToDo.Mentes();
             this.Close();
         }

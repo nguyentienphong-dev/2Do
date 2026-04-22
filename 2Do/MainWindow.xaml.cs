@@ -66,7 +66,7 @@ namespace _2Do
         {
             if (TaskListView.SelectedItem != null)
             {
-                ToDo selectedTask = (ToDo)TaskListView.SelectedItem; // elem
+                ToDo selectedTask = (ToDo)TaskListView.SelectedItem;
                 Window editWindow = new Szerkesztes()
                 {
                     TitleTextBox = { Text = selectedTask.Title },
