@@ -13,7 +13,6 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="File">
-                <MenuItem Header="_New Task" Click="NewTask_Click"/>
                 <MenuItem Header="_Exit" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Edit">
@@ -27,7 +26,11 @@
             </Grid.ColumnDefinitions>
 
             <GroupBox Header="Funkciók" Width="200" Grid.Column="0" Margin="10">
-                
+                <StackPanel>
+                    <Button Content="Új feladat hozzáadása" Margin="5" Click="NewTask_Click"/>
+                    <Button Content="Feladat szerkesztése" Margin="5" Click="EditTask_Click"/>
+                    <Button Content="Feladat törlése" Margin="5" Click="DeleteTask_Click"/>
+                </StackPanel>
             </GroupBox>
             
             <ListView Name="TaskListView" Margin="10" Grid.Column="1">

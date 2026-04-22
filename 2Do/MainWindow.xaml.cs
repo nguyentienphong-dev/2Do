@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -31,23 +32,50 @@ namespace _2Do
             {
                 TaskListView.Items.Add(item);
             }
+            ToDo.Mentes();
         }
 
         private void NewTask_Click(object sender, RoutedEventArgs e)
         {
-                Window newTaskWindow = new Hozzadaas();
-                newTaskWindow.ShowDialog();
-                TaskListBoxT();
+            Window newTaskWindow = new Hozzadaas();
+            newTaskWindow.ShowDialog();
+            TaskListBoxT();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
+            ToDo.Mentes();
             Environment.Exit(0);
         }
 
         private void Mentes_Click(object sender, RoutedEventArgs e)
         {
+            ToDo.Mentes();
+        }
 
+        private void DeleteTask_Click(object sender, RoutedEventArgs e)
+        {
+            if (TaskListView.SelectedItem != null)
+            {
+                ToDo.ToDoList.Remove((ToDo)TaskListView.SelectedItem);
+                TaskListBoxT();
+            }
+        }
+
+        private void EditTask_Click(object sender, RoutedEventArgs e)
+        {
+            if (TaskListView.SelectedItem != null)
+            {
+                ToDo selectedTask = (ToDo)TaskListView.SelectedItem; // elem
+                Window editWindow = new Szerkesztes()
+                {
+                    TitleTextBox = { Text = selectedTask.Title },
+                    DescriptionTextBox = { Text = selectedTask.Description },
+                    DeadLineTextBox = { SelectedDate = selectedTask.DueDate }
+                };
+                editWindow.ShowDialog();
+                TaskListBoxT();
+            }
         }
     }
 }

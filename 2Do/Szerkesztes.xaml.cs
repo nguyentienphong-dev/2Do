@@ -15,18 +15,19 @@ using System.Windows.Shapes;
 namespace _2Do
 {
     /// <summary>
-    /// Interaction logic for Hozzadaas.xaml
+    /// Interaction logic for Szerkesztes.xaml
     /// </summary>
-    public partial class Hozzadaas : Window
+    public partial class Szerkesztes : Window
     {
-        public Hozzadaas()
+        public Szerkesztes()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ToDo.ToDoList.Add(new ToDo(TitleTextBox.Text, DescriptionTextBox.Text, DateTime.Parse(DeadLineTextBox.Text)));
+            MainWindow mainWindow = new MainWindow();
+            (ToDo)mainWindow.TaskListView.SelectedItem;
             ToDo.Mentes();
             this.Close();
         }
