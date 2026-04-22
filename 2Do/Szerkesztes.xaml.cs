@@ -27,7 +27,6 @@ namespace _2Do
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            (ToDo)mainWindow.TaskListView.SelectedItem;
             ToDo.Mentes();
             this.Close();
         }
