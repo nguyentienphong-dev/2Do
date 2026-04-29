@@ -45,7 +45,7 @@
                 </StackPanel>
             </GroupBox>
             
-            
+           
             
             <ListView Name="TaskListView" Margin="10" Grid.Column="1">
                 <ListView.View>
