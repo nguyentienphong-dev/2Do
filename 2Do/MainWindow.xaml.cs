@@ -30,7 +30,7 @@ namespace _2Do
         private void TaskListBoxT()
         {
             TaskListView.Items.Clear();
-            foreach (var item in ToDo.ToDoList)
+            foreach (var item in ToDo.ToDoList.Where(x => x.Title.Contains(Kereso.Text)))
             {
                 TaskListView.Items.Add(item);
             }
@@ -89,5 +89,12 @@ namespace _2Do
                 TaskListBoxT();
             }
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TaskListBoxT();
+        }
+
+       
     }
 }
