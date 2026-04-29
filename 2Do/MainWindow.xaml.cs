@@ -94,7 +94,5 @@ namespace _2Do
         {
             TaskListBoxT();
         }
-
-       
     }
 }

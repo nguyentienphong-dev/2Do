@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_2Do"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="LightBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -27,21 +27,27 @@
 
             <GroupBox Header="Funkciók" Width="200" Grid.Column="0" Margin="10">
                 <StackPanel>
-                    <Button Content="Új feladat hozzáadása" Margin="5,10,5,5" Click="NewTask_Click"/>
-                    <Button Content="Feladat szerkesztése"  Margin="5,10,5,5" Click="EditTask_Click"/>
-                    <Button Content="Feladat törlése"  Margin="5,10,5,5" Click="DeleteTask_Click"/>
-                    <StackPanel Orientation="Horizontal" Margin="5,10,5,5" HorizontalAlignment="Center">
-                        <Label Content="Státusz kezelés" />
-                        <ComboBox Name="StatuszCB" Margin="5" SelectedIndex="0" SelectionChanged="StatuszCB_SelectionChanged"></ComboBox>
-                    </StackPanel>
+                    <Button Content="Új feladat hozzáadása" Margin="5,10,5,5" Click="NewTask_Click" Background="White"/>
+                    <Button Content="Feladat szerkesztése"  Margin="5,10,5,5" Click="EditTask_Click" Background="White"/>
+                    <Button Content="Feladat törlése"  Margin="5,10,5,5" Click="DeleteTask_Click" Background="White"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="5,10,5,5" HorizontalAlignment="Left">
-                        <Label Content="Kereső :">
-                            
-                        </Label>
-                        <TextBox x:Name="Kereso" HorizontalAlignment="Right" Width="100" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center"></TextBox>
-                    </StackPanel>
-                    
+                    <Grid Margin="5,10,5,5" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Státusz kezelés" Grid.Column="0"/>
+                        <ComboBox Name="StatuszCB" Margin="5" SelectedIndex="0" SelectionChanged="StatuszCB_SelectionChanged" Background="White" Grid.Column="1" HorizontalAlignment="Stretch"></ComboBox>
+                    </Grid>
+
+                    <Grid Margin="5,10,5,5" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Kereső :" Grid.Column="0"/>
+                        <TextBox x:Name="Kereso" Width="100" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                    </Grid>
                 </StackPanel>
             </GroupBox>
             
