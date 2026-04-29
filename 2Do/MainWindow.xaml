@@ -34,8 +34,18 @@
                         <Label Content="Státusz kezelés" />
                         <ComboBox Name="StatuszCB" Margin="5" SelectedIndex="0" SelectionChanged="StatuszCB_SelectionChanged"></ComboBox>
                     </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="5,10,5,5" HorizontalAlignment="Left">
+                        <Label Content="Kereső :">
+                            
+                        </Label>
+                        <TextBox x:Name="Kereso" HorizontalAlignment="Right" Width="100" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center"></TextBox>
+                    </StackPanel>
+                    
                 </StackPanel>
             </GroupBox>
+            
+            
             
             <ListView Name="TaskListView" Margin="10" Grid.Column="1">
                 <ListView.View>
