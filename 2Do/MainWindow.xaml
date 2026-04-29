@@ -27,9 +27,13 @@
 
             <GroupBox Header="Funkciók" Width="200" Grid.Column="0" Margin="10">
                 <StackPanel>
-                    <Button Content="Új feladat hozzáadása" Margin="5" Click="NewTask_Click"/>
-                    <Button Content="Feladat szerkesztése" Margin="5" Click="EditTask_Click"/>
-                    <Button Content="Feladat törlése" Margin="5" Click="DeleteTask_Click"/>
+                    <Button Content="Új feladat hozzáadása" Margin="5,10,5,5" Click="NewTask_Click"/>
+                    <Button Content="Feladat szerkesztése"  Margin="5,10,5,5" Click="EditTask_Click"/>
+                    <Button Content="Feladat törlése"  Margin="5,10,5,5" Click="DeleteTask_Click"/>
+                    <StackPanel Orientation="Horizontal" Margin="5,10,5,5" HorizontalAlignment="Center">
+                        <Label Content="Státusz kezelés" />
+                        <ComboBox Name="StatuszCB" Margin="5" SelectedIndex="0" SelectionChanged="StatuszCB_SelectionChanged"></ComboBox>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
             
@@ -37,7 +41,7 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="150"/>
-                        <GridViewColumn Header="Kész-e" DisplayMemberBinding="{Binding IsCompleted}" Width="80"/>
+                        <GridViewColumn Header="Státusz" DisplayMemberBinding="{Binding IsCompleted}" Width="80"/>
                         <GridViewColumn Header="Deadline" DisplayMemberBinding="{Binding DueDate}" Width="150"/>
                         <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="200"/>
                     </GridView>

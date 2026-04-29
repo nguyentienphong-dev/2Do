@@ -21,6 +21,10 @@ namespace _2Do
         {
             InitializeComponent();
             ToDo.Beolvas(System.IO.File.ReadAllLines("todo.txt"));
+
+
+
+
             TaskListBoxT();
 
         }
@@ -74,6 +78,16 @@ namespace _2Do
                     DeadLineTextBox = { SelectedDate = selectedTask.DueDate }
                 };
                 editWindow.ShowDialog();
+                TaskListBoxT();
+            }
+        }
+
+        private void StatuszCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TaskListView.SelectedItem != null)
+            {
+                ToDo selectedTask = (ToDo)TaskListView.SelectedItem;
+                selectedTask.IsCompleted = StatuszCB.SelectedItem.ToString();
                 TaskListBoxT();
             }
         }
