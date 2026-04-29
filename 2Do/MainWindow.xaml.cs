@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace _2Do
 {
@@ -20,11 +21,8 @@ namespace _2Do
         public MainWindow()
         {
             InitializeComponent();
-            ToDo.Beolvas(System.IO.File.ReadAllLines("todo.txt"));
-
-
-
-
+            ToDo.Beolvas(File.ReadAllLines("todo.txt", Encoding.UTF8));
+            StatuszCB.ItemsSource = new List<string>(File.ReadAllLines("statusz.txt",Encoding.UTF8));
             TaskListBoxT();
 
         }

@@ -1,0 +1,7 @@
+Nincs kész
+Kész van
+Nem teljesen kész
+Elkezdve
+Nincs elkezdve
+Nem sürgős
+Sürgős
